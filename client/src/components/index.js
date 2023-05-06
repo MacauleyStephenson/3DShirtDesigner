@@ -9,6 +9,5 @@ export {
 	AIPicker,
 	ColorPicker,
 	FilePicker,
-	Tab
-
+	Tab,
 };
