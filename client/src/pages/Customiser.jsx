@@ -34,7 +34,7 @@ const Customiser = () => {
 				return <FilePicker
 					file={file}
 					setFile={setFile}
-
+					readFile={readFile}
 				/>
 			case "aipicker":
 				return <AIPicker />
@@ -61,8 +61,8 @@ const Customiser = () => {
 			case "stylishShirt":
 				state.isFullTexture = !activeFilterTab[tabName];
 			default:
-				state.isFullTexture = false
-				state.isLogoTexture = true
+				state.isFullTexture = false;
+				state.isLogoTexture = true;
 		}
 	}
 
@@ -84,7 +84,7 @@ const Customiser = () => {
 						{...slideAnimation('left')}
 					>
 						<div className='flex items-center min-h-screen'>
-							<div className='editortabs-container tabls'>
+							<div className='editortabs-container tabs'>
 								{EditorTabs.map((tab) => (
 									<Tab
 										key={tab.name}
@@ -111,7 +111,7 @@ const Customiser = () => {
 					</motion.div>
 
 					<motion.div
-						className='filtertabls-container'
+						className='filtertabs-container'
 						{...slideAnimation('up')}
 					>
 						{FilterTabs.map((tab) => (
