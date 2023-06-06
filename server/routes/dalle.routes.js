@@ -7,7 +7,7 @@ dotenv.config();
 const router = express.Router();
 
 const config = new Configuration({
-	apiKey: process.env.OPENAI_API_KEY
+	apiKey: process.env.OPENAI_API_KEY,
 })
 
 const openai = new OpenAIApi(config)
@@ -31,7 +31,7 @@ router.route('/').post(async (req, res) => {
 
 		res.status(200).json({ photo: image })
 
-	} catch {
+	} catch (error) {
 		console.error(error);
 		res.status(500).json({ message: "Something went wrong" })
 	}
